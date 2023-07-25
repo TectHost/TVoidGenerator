@@ -1,0 +1,9 @@
+# TVoidGenerator plugin configuration file
+messages:
+  generate-help: "&cYou must specify the name of the new world. Example: /tvoidgenerator generate (WorldName)"
+  generate-success: "&aGenerating world: {world}"
+  tp-success: "&aYou have teleported to the world '{world}'."
+  tp-not-found: "&cThe world '{world}' does not exist."
+  tp-not-player: "&cThis command can only be executed by one player."
+  reload-success: "&aPlugin configuration has been reloaded."
+  no-permission: "&cYou do not have permission to execute this command."
