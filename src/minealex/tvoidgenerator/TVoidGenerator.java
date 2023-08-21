@@ -1,33 +1,22 @@
 package minealex.tvoidgenerator;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Random;
-
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
-import org.bukkit.Location;
-import org.bukkit.Material;
-import org.bukkit.World;
-import org.bukkit.WorldCreator;
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandSender;
-import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.configuration.file.YamlConfiguration;
-import org.bukkit.entity.Player;
-import org.bukkit.generator.ChunkGenerator;
+import org.bukkit.*;
+import org.bukkit.command.*;
+import org.bukkit.configuration.file.*;
+import org.bukkit.entity.*;
+import org.bukkit.generator.*;
 import org.bukkit.plugin.java.JavaPlugin;
 
-@SuppressWarnings("deprecation")
+import java.io.*;
+import java.util.*;
+
 public class TVoidGenerator extends JavaPlugin {
     private FileConfiguration config;
 
     @Override
     public void onEnable() {
         saveDefaultConfig();
-        config = YamlConfiguration.loadConfiguration(getResource("config.yml"));
+        config = YamlConfiguration.loadConfiguration(new InputStreamReader(getResource("config.yml")));
         getCommand("tvoidgenerator").setExecutor(this);
         getCommand("tvoidgenerator").setTabCompleter(this);
         getLogger().info("El plugin TVoidGenerator ha sido habilitado.");
@@ -196,19 +185,18 @@ public class TVoidGenerator extends JavaPlugin {
         return ChatColor.translateAlternateColorCodes('&', message);
     }
 
-    // Clase CustomChunkGenerator (sin cambios)
+ // Clase CustomChunkGenerator
     public class CustomChunkGenerator extends ChunkGenerator {
         @Override
-        public byte[] generate(World world, Random random, int x, int z) {
-            byte[] result = new byte[32768];
+        public ChunkData generateChunkData(World world, Random random, int x, int z, BiomeGrid biome) {
+            ChunkData chunkData = createChunkData(world);
+            
+            // Verifica si estas en las coordenadas 0, 0, 0 del chunk actual
             if (x == 0 && z == 0) {
-                result[getBlockIndex(x, 0, z)] = (byte) Material.BEDROCK.getId(); // Cambiar las coordenadas del bloque de bedrock a 0, 0, 0
+                chunkData.setBlock(0, 0, 0, Material.BEDROCK);
             }
-            return result;
-        }
-
-        private int getBlockIndex(int x, int y, int z) {
-            return (x * 16 + z) * 128 + y;
+            
+            return chunkData;
         }
     }
 }
