@@ -69,6 +69,15 @@ public class TVoidGenerator extends JavaPlugin {
                 }
             } else if (args.length == 1 && args[0].equalsIgnoreCase("reload")) {
                 // ... código existente para recargar la configuración
+            } else if (args.length == 1 && args[0].equalsIgnoreCase("version")) {
+                if (sender.hasPermission("tvoidgenerator.version")) {
+                    String version = getDescription().getVersion();
+                    sender.sendMessage(formatMessage("version-message", "{version}", version));
+                    return true;
+                } else {
+                    sender.sendMessage(formatMessage("no-permission"));
+                    return true;
+                }
             }
         }
         return false;
