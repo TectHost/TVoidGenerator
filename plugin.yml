@@ -1,7 +1,9 @@
 main: minealex.tvoidgenerator.TVoidGenerator
-version: 1.3
+version: 1.4
 name: TVoidGenerator
 
 commands:
   tvoidgenerator:
     description: Generator command
+    aliases:
+    - tvg
