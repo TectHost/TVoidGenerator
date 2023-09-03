@@ -12,6 +12,11 @@ Simple world generator
 - /tvoidgenerator tp
 - /tvoidgenerator import
 - /tvoidgenerator version
+- /tvg tp
+- /tvg reload
+- /tvg generate
+- /tvg import
+- /tvg version
 
 # Permissions
 - tvoidgenerator.reload
