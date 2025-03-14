@@ -1,0 +1,13 @@
+utils\TranslateHexColorCodes.class
+tect\host\TVoidGenerator.class
+utils\ConfigFile.class
+commands\Commands.class
+commands\Commands$SubCommand.class
+utils\EmptyWorldGeneratorData.class
+managers\ConfigManager.class
+utils\TranslateColors.class
+managers\MessagesManager.class
+utils\EmptyWorldGenerator.class
+utils\SingleBiomeProvider.class
+utils\FlatWorldGenerator.class
+commands\CommandTabCompleter.class

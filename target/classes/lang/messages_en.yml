@@ -1,0 +1,44 @@
+# #################################################################
+# ┌─────────────────────────────────────────────────────────────┐ #
+# │                       English messages                      │ #
+# │                   Translated by: Tect.host                  │ #
+# └─────────────────────────────────────────────────────────────┘ #
+# #################################################################
+
+messages:
+  unknown_command: "<red>Unknown command.</red> Use <gold><click:run_command:'/tvoidgenerator'><hover:show_text:'<gray>Click to run the command</gray>'><green>/tvoidgenerator</green></hover></click> to see available commands."
+  only_player: "<red>This command can only be used by a player.</red>"
+  reload: "<green>The plugin has been reloaded successfully.</green>"
+  version: "<green>Version: %version%</green>"
+  invalid-type: "<red>The world's type is wrong:</red> <yellow>%type%</yellow>"
+  invalid-arg: "<red>Wrong argument:</red> <yellow>%arg%</yellow>"
+  invalid-biome: "<red>Wrong biome:</red> <yellow>%biome%</yellow>"
+  no-perm: "<red>You don't have permissions.</red>"
+
+  help:
+    subcommands:
+      - "<green>Commands:</green>"
+      - "<green>- <bold><click:suggest_command:'/tvoidgenerator generate '><hover:show_text:'<gray>Creates a world with a bedrock block at 0, 50, 0'>/tvg generate (name)</hover></click></bold></green>"
+      - "<green>- <bold><click:suggest_command:'/tvoidgenerator tp '><hover:show_text:'<gray>Teleports the player to the void world'>/tvg tp (name)</hover></click></bold></green>"
+      - "<green>- <bold><click:run_command:'/tvoidgenerator list'><hover:show_text:'<gray>Displays available worlds'>/tvg list</hover></click></bold></green>"
+      - "<green>- <bold><click:suggest_command:'/tvoidgenerator import '><hover:show_text:'<gray>Loads a world from the filesystem'>/tvg import (name)</hover></click></bold></green>"
+
+  generate:
+    usage: "<red>Usage: <click:suggest_command:'/tvoidgenerator generate '><hover:show_text:'<gray>Example: /tvoidgenerator generate world1'>/tvoidgenerator generate (name)</hover></red>"
+    success: "<green>World successfully generated:</green> <yellow><click:run_command:'/tvoidgenerator tp %world%'><hover:show_text:'<gray>Click to be teleported into the world'>%world%</hover></click></yellow>"
+    error: "<red>Error generating world. Make sure the name is valid.</red>"
+
+  teleport:
+    usage: "<red>Usage: <click:suggest_command:'/tvoidgenerator tp '><hover:show_text:'<gray>Example: /tvoidgenerator tp world1'>/tvoidgenerator tp (name)</hover></red>"
+    success: "<green>You have been teleported to the world:</green> <yellow><click:copy_to_clipboard:%world%><hover:show_text:'<gray>Click to copy the world name'>%world%</hover></click></yellow>"
+    not_found: "<red>The world does not exist.</red>"
+
+  list:
+    empty: "<red>No worlds available.</red>"
+    header: "<green>Available worlds:</green>"
+
+  import:
+    usage: "<red>Usage: <hover:show_text:'<gray>Example: /tvoidgenerator import world1'></gray></hover>/tvoidgenerator import (name)</red>"
+    not_found: "<red>The world does not exist in the server directory.</red>"
+    success: "<green>World imported and loaded:</green> <yellow><click:run_command:'/tvg tp %world%'><hover:show_text:'<gray>Click to be teleported to the world'>%world%</hover></yellow>"
+    error: "<red>Failed to load the world.</red>"

@@ -1,0 +1,13 @@
+name: TVoidGenerator
+version: ${project.version}
+main: tect.host.TVoidGenerator
+
+author: Mine_Alex | Tect.host
+api-version: '1.13'
+website: tect.host
+
+commands:
+  tvoidgenerator:
+    usage: /tvoidgenerator <command>
+    aliases:
+      - tvg
